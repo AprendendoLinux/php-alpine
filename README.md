@@ -2,10 +2,6 @@
 
 Esse projeto contém um webserver leve e robusto para para rodar a aplicação [DokuWiki](https://www.dokuwiki.org/dokuwiki) e CRM da [Limão com Mel Modas](https://www.limaocommelmodas.com.br).
 
-### Preparando o ambiente:
-
-    docker volume create php
-
 ## Subindo o contêiner:
 
     docker run -d --name='php' \
