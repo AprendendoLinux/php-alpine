@@ -12,7 +12,7 @@ Esse projeto contém um webserver leve e robusto para para rodar a aplicação [
 	    --hostname='php' \
 	    -v php:/var/www/html \
 	    -p 80:80 \
-	--restart=always aprendendolinux/php-apache-alpine:7.4
+	--restart=always aprendendolinux/php-alpine:7.4
 
 Caso prefira, você pode usar o Docker Composer com o arquivo [docker-compose.yml](https://github.com/AprendendoLinux/dokuwiki/blob/main/docker-compose.yml).
 
