@@ -15,6 +15,7 @@ RUN echo "https://php.hernandev.com/v3.11/php-7.4" >> /etc/apk/repositories && \
     php7-cgi \
     php7-mbstring \
     php7-json \
+    php7-xml \
     php7-session && \
     rm /var/cache/apk/* && \
     \
@@ -33,7 +34,12 @@ RUN echo "https://php.hernandev.com/v3.11/php-7.4" >> /etc/apk/repositories && \
     sed -i 's/;date.timezone =/date.timezone = America\/Sao_Paulo/g' /etc/php7/php.ini && \
     sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 2048M/g' /etc/php7/php.ini && \
     sed -i 's/post_max_size = 8M/post_max_size = 1024M/g' /etc/php7/php.ini && \
-    echo 'AddDefaultCharset utf-8' >> /etc/apache2/httpd.conf
+    echo 'AddDefaultCharset utf-8' >> /etc/apache2/httpd.conf && \
+    echo '<LocationMatch "/(data|conf|bin|inc|vendor)/">' >> /etc/apache2/httpd.conf && \
+    echo 'Order allow,deny' >> /etc/apache2/httpd.conf && \
+    echo 'Deny from all' >> /etc/apache2/httpd.conf && \
+    echo 'Satisfy All' >> /etc/apache2/httpd.conf && \
+    echo '</LocationMatch>' >> /etc/apache2/httpd.conf
 WORKDIR /root
 EXPOSE 80
 CMD ["httpd", "-D", "FOREGROUND"]
