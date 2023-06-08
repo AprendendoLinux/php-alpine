@@ -16,6 +16,7 @@ RUN echo "https://php.hernandev.com/v3.11/php-7.4" >> /etc/apk/repositories && \
     php7-mbstring \
     php7-json \
     php7-xml \
+    php7-zlib \
     php7-session && \
     rm /var/cache/apk/* && \
     \
