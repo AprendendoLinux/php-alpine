@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  php:
+    image: aprendendolinux/php-alpine:8.1
+    restart: always
+    container_name: php
+    volumes:
+    - php:/var/www/html
+    ports:
+    - "80:80"
+volumes:
+  php:
