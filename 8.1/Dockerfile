@@ -16,6 +16,7 @@ RUN apk update && apk upgrade && apk add \
     php81-xml \
     php81-zlib \
     php81-ldap \
+    php81-calendar \
     php81-session && \
     rm /var/cache/apk/* && \
     \
